@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foods_vnt/pages/resetPasswordPage.dart';
-import 'package:foods_vnt/pages/signup.dart';
+import 'package:foods_vnt/views/home.dart';
+import 'package:foods_vnt/views/resetPasswordPage.dart';
+import 'package:foods_vnt/views/signup.dart';
 import '../widget/button_facebook.dart';
-import '../widget/button_main.dart';
 import '../widget/button_secundary.dart';
-import '../widget/inputField.dart';
-import 'home.dart';
 
 class loginPage extends StatefulWidget {
   const loginPage({super.key});
@@ -132,7 +130,7 @@ class _loginPageState extends State<loginPage> {
                       if (email == 'test@test.com' && pass == '1234') {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Home()),
+                          MaterialPageRoute(builder: (context) => HomePage()),
                         );
                       } else {}
                     }),

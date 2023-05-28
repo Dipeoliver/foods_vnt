@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foods_vnt/pages/login_page.dart';
+import 'package:foods_vnt/views/login_page.dart';
 
 void main() {
   runApp(const MainApp());

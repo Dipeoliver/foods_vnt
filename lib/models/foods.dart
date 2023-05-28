@@ -8,7 +8,7 @@ class Foods {
     return Foods(json['title'] as String, json['image'] as String);
   }
 
-  static List<Foods> FoodssFromSnapshot(List snapshot) {
+  static List<Foods> recipesFromSnapshot(List snapshot) {
     return snapshot.map((data) {
       return Foods.fromJson(data);
     }).toList();

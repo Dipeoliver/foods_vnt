@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:foods_vnt/models/recipes.dart';
 import 'package:http/http.dart' as http;
+
+import 'foods.dart';
 
 class FoodsApi {
   static Future<List<Foods>> getRecipe() async {

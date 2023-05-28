@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/foods.dart';
 import '../models/foods_api.dart';
-import '../models/recipes.dart';
 import '../widget/recipe_card.dart';
 
 class HomePage extends StatefulWidget {

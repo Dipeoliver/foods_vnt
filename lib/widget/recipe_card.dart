@@ -3,33 +3,34 @@ import 'package:flutter/material.dart';
 class RecipeCard extends StatelessWidget {
   final String title;
   final String thumbnailUrl;
-  RecipeCard({
+  const RecipeCard({
+    super.key,
     required this.title,
     required this.thumbnailUrl,
   });
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       width: MediaQuery.of(context).size.width,
-      height: 180,
+      height: 200,
       decoration: BoxDecoration(
         color: Colors.black,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.6),
-            offset: Offset(
+            color: Color.fromARGB(255, 30, 3, 42).withOpacity(0.8),
+            offset: const Offset(
               0.0,
-              10.0,
+              12.0,
             ),
-            blurRadius: 10.0,
+            blurRadius: 15.0,
             spreadRadius: -6.0,
           ),
         ],
         image: DecorationImage(
           colorFilter: ColorFilter.mode(
-            Colors.black.withOpacity(0.35),
+            Colors.black.withOpacity(0.45),
             BlendMode.multiply,
           ),
           image: NetworkImage(thumbnailUrl),
@@ -39,64 +40,21 @@ class RecipeCard extends StatelessWidget {
       child: Stack(
         children: [
           Align(
+            alignment: Alignment.center,
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5.0),
+              padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: Text(
                 title,
-                style: TextStyle(
-                  fontSize: 19,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
                 textAlign: TextAlign.center,
               ),
             ),
-            alignment: Alignment.center,
-          ),
-          Align(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.yellow,
-                        size: 18,
-                      ),
-                      SizedBox(width: 7),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(5),
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.4),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.schedule,
-                        color: Colors.yellow,
-                        size: 18,
-                      ),
-                      SizedBox(width: 7),
-                    ],
-                  ),
-                )
-              ],
-            ),
-            alignment: Alignment.bottomLeft,
-          ),
+          )
         ],
       ),
     );

@@ -19,6 +19,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/italian_food.jpg
     - assets/images/logo.png
     - assets/images/face.png
     - assets/images/recovery.png

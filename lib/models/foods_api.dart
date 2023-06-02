@@ -1,15 +1,16 @@
 import 'dart:convert';
+import 'package:foods_vnt/utils/api_constants.dart';
 import 'package:http/http.dart' as http;
 
 import 'foods.dart';
 
 class FoodsApi {
   static Future<List<Foods>> getRecipe() async {
-    var uri = Uri.https('api.spoonacular.com', '/recipes/complexSearch',
-        {"query": "pizza", "apiKey": "cd5ef5aeeafb47c38fea1e7fb801cf0c"});
+    var uri = Uri.https(ApiConstants.baseUrl, ApiConstants.usersEndpoint,
+        {"query": "pizza", ApiConstants.apiKey: ApiConstants.apiKeyValue});
 
     final response = await http.get(uri, headers: {
-      "Content-Type": "application/json",
+      ApiConstants.ContentType: ApiConstants.ContentTypeValue,
     });
 
     Map data = jsonDecode(response.body);

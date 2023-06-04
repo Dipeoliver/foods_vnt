@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                   floating: false,
                   flexibleSpace: FlexibleSpaceBar(
                     background: Image.network(
-                      'https://www.shutterstock.com/image-photo/italian-food-background-cuisine-ingredients-260nw-1495924760.jpg',
+                      ImageConstants.bg_germany_food,
                       fit: BoxFit.cover,
                     ),
                     centerTitle: true,
